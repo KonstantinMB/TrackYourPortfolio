@@ -3,9 +3,8 @@ package com.konstantinmb.trackyourportfolio;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.konstantinmb.trackyourportfolio.event.UserPayload;
 import com.konstantinmb.trackyourportfolio.repository.UserRepository;
-import com.konstantinmb.trackyourportfolio.service.StockService;
+import com.konstantinmb.trackyourportfolio.service.UserService;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
@@ -31,7 +30,7 @@ public class TrackYourPortfolioApplication {
 	public Consumer<Message<UserPayload>> userInfoEventSupplier() {
 		return message -> {
 			try {
-				new StockService(userRepo).exampleMethod(message.getPayload());
+				new UserService(userRepo).saveUserToDB(message.getPayload());
 			} catch (JsonProcessingException e) {
 				e.printStackTrace();
 			}
