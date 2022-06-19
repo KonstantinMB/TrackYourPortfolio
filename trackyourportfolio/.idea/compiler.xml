@@ -11,6 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+<<<<<<< HEAD
       <module name="trackyourportfolio" target="17" />
     </bytecodeTargetLevel>
   </component>
@@ -19,4 +20,9 @@
       <module name="trackyourportfolio" options="-parameters" />
     </option>
   </component>
+=======
+      <module name="trackyourportfolio" target="${java.version}" />
+    </bytecodeTargetLevel>
+  </component>
+>>>>>>> d889377 (--)
 </project>
