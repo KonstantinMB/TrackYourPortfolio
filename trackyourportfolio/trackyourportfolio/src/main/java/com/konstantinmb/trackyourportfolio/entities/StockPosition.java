@@ -2,6 +2,7 @@ package com.konstantinmb.trackyourportfolio.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,6 +12,7 @@ import java.math.BigDecimal;
 @Entity
 @Table(name="stock_positions")
 @AllArgsConstructor
+@Builder
 @Getter
 @Setter
 public class StockPosition {
